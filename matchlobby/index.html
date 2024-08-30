@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakecode</title>
+    <link rel="icon" type="image/x-icon" href="./asset/FAVICON.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="overlay" style="display: none;"></div>
+    <div id="match-found-overlay" style="display: none;">
+        <div class="overlay-content">
+            <h2>Match Found!</h2>
+            <p id="countdown-timer">5</p>
+        </div>
+    </div>
+    
+    
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="./asset/logo_img.svg" alt="Logo" class="logo">
+            <a href="#" class="nav-link">SHAKE IT!</a>
+            <a href="#" class="nav-link">Practice</a>
+            <a href="#" class="nav-link">Ranks</a>
+            <a href="#" class="nav-link">Open source</a>
+        </div>
+        <div class="navbar-mid">
+            
+            <span class="nav-text"><span class="highlight-gamestat" id="game-status">joined</span> <span id="game-name" style="color: var(--positive);">[None]</span></span>
+            <span class="nav-text"><span class="highlight">999,999 Shakers</span> in Game</span>
+            <span class="nav-text"><span class="highlight-green">200 Friends</span> online</span>
+        </div>
+        <div class="navbar-right">
+            <span class="nav-text"><span class="username">Notth3dev</span> <span class="highlight-tier">B2</span></span>
+        </div>
+        
+        
+    </nav>
+
+    <div class="tab-container">
+        <div class="tabs">
+            <span class="tab-item" onclick="showContent('studyengine', event)">Studyengine</span>
+            <span class="tab-item" onclick="showContent('snakeRoyale', event)">Shake Royale</span>
+            <span class="tab-item" onclick="showContent('speedrun', event)">Speedrun</span>
+            <span class="tab-item" onclick="showContent('rankedMatch', event)">Ranked Match</span>
+            <span class="tab-item" onclick="showContent('quickPlay', event)">Quick Play</span>
+            <span class="tab-item" onclick="showContent('casualPlay', event)">Casual Play</span>
+            <span class="tab-item" onclick="showContent('customMatch', event)">Custom Match</span>
+        </div>
+    </div>
+
+    <div id="content" class="content">
+        <div id="studyengine" class="content-item active">
+            <h1>Studyengine</h1>
+            <p>Attach Engine On your Study.</p>
+            <p>learn / code with AI-based Studyengine</p>
+
+        </div>
+        <div id="snakeRoyale" class="content-item">
+        <div class="discribe">1명이 남을때까지 경쟁합니다. 매 라운드 플레이어의 1/2이 탈락합니다.</div>
+        <div class="number-overlay">
+            <div class="userlv">57</div>
+            <div class="center-content">
+                <div class="countdown-container">
+        <div class="countdown">
+            <div class="game-start">
+                <div class="label">Game starts in</div>
+                <span id="time">31</span>
+            </div>
+            <div class="players-joined">
+                <div class="label">Players Joined</div>
+                <span id="players">88</span>
+            </div>
+        </div>
+                <div class="username">Namwgwew</div>
+            </div>
+        </div>
+        
+
+        <div class="username-royale"></div>
+        <div class="button-container">
+            <button class="startbtn" data-game="Shake Royale">
+                <div class="text-container">SHAKE IT!</div>
+                <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+            </button>
+        </div>   
+        <div class="queue">estimated time : 31s</div>
+    </div>
+        </div>
+
+
+        <div id="speedrun" class="content-item">
+            <div class="discribe">10분마다 문제가 초기화됩니다. 먼저 푸는 사람이 승리합니다.</div>
+            <div class="number-overlay">
+                <div class="userlv">57</div>
+                <div class="center-content">
+                    <div class="letter">S</div>
+                    <div class="username">Namwgwew</div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="startbtn" data-game="Speedrun">
+                    <div class="text-container">SHAKE IT!</div>
+                    <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+                </button>
+                
+                <button class="startbtn">
+                    <div class="text-container">
+                        Review
+                    </div>
+                    <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+                </button>
+                
+            </div>        
+            
+            <div class="queue">estimated time : 1m 25s</div>
+        </div>
+        
+        
+        <div id="rankedMatch" class="content-item">
+            <div class="discribe">랭크를 두고 비슷한 실력의 사용자와 경쟁하세요. 본인의 실력을 보여주세요.</div>
+            <div class="ranked-tier">VerylongTier IV</div>
+            <div class="username">Player name</div>
+
+                <div class="progress-title">League IV</div>
+                <div class="progress-subtitle">
+                    <span id="current-level">currnetlv</span>
+                    <span style="font-size: 10px;">/<span id="level-max">levelmax</span></span>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-bar-fill"></div>
+                    <div class="progress-text-left">G2</div>
+                    <div class="progress-text-right">G3</div>
+                </div>
+
+                <div class="button-container">
+                    <button class="startbtn" data-game="Ranked Play">
+                        <div class="text-container">SHAKE IT!</div>
+                        <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+                    </button>
+                    
+                    <button class="startbtn">
+                        <div class="text-container">
+                            Review
+                        </div>
+                        <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+                    </button>
+                    
+                </div>
+                <div class="queue">estimated time : 1m 25s</div>
+                
+
+        </div>
+
+        <div id="quickPlay" class="content-item">
+            <div class="discribe">빠른 플레이로 매치를 연습하세요.</div>
+            <div class="number-overlay">
+                <div class="userlv">57</div>
+                <div class="center-content">
+                    <div class="letter">Q</div>
+                    <div class="username">Nojjjjjjj</div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="startbtn" data-game="Quick Play">
+                    <div class="text-container">SHAKE IT!</div>
+                    <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+                </button>
+                
+                <button class="startbtn">
+                    <div class="text-container">
+                        Review
+                    </div>
+                    <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+                </button>
+                
+            </div>        
+            
+            <div class="queue">estimated time : 1m 25s</div>
+                   
+        </div>
+        <div id="casualPlay" class="content-item">
+            <div class="discribe">기본적인 모드입니다. 레벨을 올려 실력을 향상시키세요.</div>
+            <div class="number-overlay">
+                <div class="userlv">57</div>
+                <div class="center-content">
+                    <div class="letter">C</div>
+                    <div class="username">Notth3dev</div>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="startbtn" data-game="Casual Play">
+                    <div class="text-container">SHAKE IT!</div>
+                    <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+                </button>
+                
+                
+                <button class="startbtn">
+                    <div class="text-container">
+                        Review
+                    </div>
+                    <img src="./asset/logo_img.svg" alt="Logo" class="logo-inside-button">
+                </button>
+                
+            </div>        
+            
+            <div class="queue">estimated time : 1m 25s</div>
+        </div>
+        <div id="customMatch" class="content-item">
+            <div class="customgame-container">
+                <!-- Room Settings -->
+                <div class="customgame-room-under">
+                    <div class="customgame-settingbigtitle" style="font-size: 30px; font-weight: 20px;">Room settings</div>
+                    <hr>
+                    <div class="customgame-settingbigtitle">Basic</div>
+                    <div class="customgame-settingtitle">Problem Set: <span class="customgame-settingpara">random</span></div>
+                    <div class="customgame-settingtitle">Skills: <span class="customgame-settingpara-disabled">off</span></div>
+                    <div class="customgame-settingtitle">Sudden death: <span class="customgame-settingpara-disabled">off</span></div>
+    
+                    <hr>
+                    <div class="customgame-settingbigtitle">Players</div>
+                    <div class="customgame-settingtitle">Max players : <span class="customgame-settingpara">6</span></div>
+                    <div class="customgame-settingtitle">Min rank : <span class="customgame-settingpara-disabled">off</span></div>
+                    <div class="customgame-settingtitle">Max rank : <span class="customgame-settingpara-disabled">off</span></div>
+                </div>
+                <div>
+                    <div class="customgame-upper">
+                    <div class="customgame-room-code">
+                        
+                        <div class="discribe">Room code</div>
+                        <h1>560 1246</h1>
+                        <p>Click to copy</p>
+                    </div>
+                    <div class="customgame-join-room" style="margin-top: 0px;">
+                        <div class="discribe">Join the room</div>
+                        <input type="text" placeholder="Enter Room Code">
+                    </div>
+                </div>
+                    <div class="customgame-players">
+                        <div class="customgame-player customgame-host">
+                            <div style=" font-weight: 1000">Tier</div>
+                            <p>[host] playername</p>
+                        </div>
+                        <div class="customgame-player">
+                            +
+                            <p>waiting...</p>
+                        </div>
+                        <div class="customgame-player">
+                            +
+                            <p>waiting...</p>
+                        </div>
+                        <div class="customgame-player">
+                            +
+                            <p>waiting...</p>
+                        </div>
+                        <div class="customgame-player">
+                            +
+                            <p>waiting...</p>
+                        </div>
+                    </div>
+        
+                    
+                </div>
+        
+                <div class="customgame-room-logs">
+                    <div class="topper"></div>
+                    <div class="customgame-settingbigtitle" style="font-size: 30px;font-weight: 700">Room logs</div>
+                    <p>No logs available.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
